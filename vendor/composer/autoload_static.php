@@ -68,6 +68,10 @@ class ComposerStaticInit78d6e35cc32d7588d113beb3d9dedc12
         array (
             'cebe\\markdown\\' => 14,
         ),
+        'Z' => 
+        array (
+            'ZipStream\\' => 10,
+        ),
         'Y' => 
         array (
             'Yiisoft\\EventDispatcher\\' => 24,
@@ -100,12 +104,15 @@ class ComposerStaticInit78d6e35cc32d7588d113beb3d9dedc12
         ),
         'P' => 
         array (
+            'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
+            'Psr\\Http\\Client\\' => 16,
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
             'Prophecy\\' => 9,
+            'PhpOffice\\PhpSpreadsheet\\' => 25,
         ),
         'O' => 
         array (
@@ -114,7 +121,9 @@ class ComposerStaticInit78d6e35cc32d7588d113beb3d9dedc12
         ),
         'M' => 
         array (
+            'MyCLabs\\Enum\\' => 13,
             'Monolog\\' => 8,
+            'Matrix\\' => 7,
         ),
         'G' => 
         array (
@@ -138,6 +147,7 @@ class ComposerStaticInit78d6e35cc32d7588d113beb3d9dedc12
         ),
         'C' => 
         array (
+            'Complex\\' => 8,
             'Codeception\\PHPUnit\\' => 20,
             'Codeception\\Extension\\' => 22,
             'Codeception\\' => 12,
@@ -231,6 +241,10 @@ class ComposerStaticInit78d6e35cc32d7588d113beb3d9dedc12
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
         ),
+        'ZipStream\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/maennchen/zipstream-php/src',
+        ),
         'Yiisoft\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/event-dispatcher/src',
@@ -315,6 +329,10 @@ class ComposerStaticInit78d6e35cc32d7588d113beb3d9dedc12
         array (
             0 => __DIR__ . '/..' . '/symfony/browser-kit',
         ),
+        'Psr\\SimpleCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
@@ -323,6 +341,10 @@ class ComposerStaticInit78d6e35cc32d7588d113beb3d9dedc12
         array (
             0 => __DIR__ . '/..' . '/psr/http-factory/src',
             1 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Psr\\Http\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-client/src',
         ),
         'Psr\\EventDispatcher\\' => 
         array (
@@ -340,6 +362,10 @@ class ComposerStaticInit78d6e35cc32d7588d113beb3d9dedc12
         array (
             0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
         ),
+        'PhpOffice\\PhpSpreadsheet\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet',
+        ),
         'Opis\\Closure\\' => 
         array (
             0 => __DIR__ . '/..' . '/opis/closure/src',
@@ -348,9 +374,17 @@ class ComposerStaticInit78d6e35cc32d7588d113beb3d9dedc12
         array (
             0 => __DIR__ . '/..' . '/zircote/swagger-php/src',
         ),
+        'MyCLabs\\Enum\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/myclabs/php-enum/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Matrix\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/markbaker/matrix/classes/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -384,6 +418,10 @@ class ComposerStaticInit78d6e35cc32d7588d113beb3d9dedc12
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
+        'Complex\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/markbaker/complex/classes/src',
+        ),
         'Codeception\\PHPUnit\\' => 
         array (
             0 => __DIR__ . '/..' . '/codeception/phpunit-wrapper/src',
@@ -401,6 +439,13 @@ class ComposerStaticInit78d6e35cc32d7588d113beb3d9dedc12
     );
 
     public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'PHPExcel' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes',
+            ),
+        ),
         'H' => 
         array (
             'HTMLPurifier' => 
