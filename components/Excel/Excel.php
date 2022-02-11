@@ -4,6 +4,7 @@ namespace app\components\excel;
 
 use PHPExcel_Style_Border;
 use PHPExcel_Style_Fill;
+use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
 use PhpOffice\PhpSpreadsheet\Exception as PhpExcelException;
 use PhpOffice\PhpSpreadsheet\Writer\Exception;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
@@ -107,12 +108,13 @@ class Excel
     /**
      * @param string $cell
      * @param int $width
+     * @throws PhpExcelException
      */
     public function setWidth(string $cell, int $width = 0): void
     {
         $column = $this->parseCell($cell)['column'];
         if($width == 0) {
-            $this->xls->getActiveSheet()->getColumnDimensionByColumn($column)->setAutoSize(true);
+            $this->xls->getActiveSheet()->getColumnDimensionByColumn(Coordinate::columnIndexFromString($column))->setAutoSize(true);
         } else {
             $this->xls->getActiveSheet()->getColumnDimension($column)->setWidth($width);
         }
@@ -134,7 +136,7 @@ class Excel
      */
     private function parseCell(string $cell): array
     {
-        $row = preg_replace("/^[^0-9]/", "", $cell);
+        $row = preg_replace("/[^0-9]/", "", $cell);
         $column = preg_replace("/[0-9]/", "", $cell);
 
         return [
