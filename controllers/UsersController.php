@@ -6,10 +6,15 @@ use app\components\dto\DTO;
 use app\components\excel\Excel;
 use app\components\excel\ExcelFontBuilder;
 use app\components\excel\ExcelHelper;
+use app\components\excel\ExcelSaveActiveRecord;
 use app\components\Exceptions\ModelException;
 use app\components\Response;
 use app\components\services\UsersService;
-use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use app\models\Roles;
+use app\models\Users;
+use PHPExcel_Style_Border;
+use PHPExcel_Style_Fill;
+use PhpOffice\PhpSpreadsheet\Exception as ExcelException;
 use PhpOffice\PhpSpreadsheet\Writer\Exception;
 use Yii;
 use yii\base\Exception as yiiException;
@@ -75,16 +80,26 @@ class UsersController extends CrudController
                 ->setFont(ExcelFontBuilder::init()->setSize(13)->useBoldStyle()->useStrikeStyle()->useUnderlineStyle()->useItalicStyle())
                 ->setFontColor("#00FFFF")
                 ->setBackgroundColor("#FFFFFF")
-                ->setBgFillType(\PHPExcel_Style_Fill::FILL_SOLID)
-                ->setBorderType(\PHPExcel_Style_Border::BORDER_SLANTDASHDOT)
+                ->setBgFillType(PHPExcel_Style_Fill::FILL_SOLID)
+                ->setBorderType(PHPExcel_Style_Border::BORDER_SLANTDASHDOT)
                 ->setBorderColor("#FF00FF")
                 ->useWrap();
 
             $excel->cellBuilder("G1", "Привет!")
                 ->setFont(ExcelFontBuilder::init()->setSize(22));
 
+            $excel->setWidth("K", 4);
+            $excel->setWidth("L", 20);
+            $excel->setWidth("M", 20);
+            $excel->setWidth("N", 25);
+
+            ExcelSaveActiveRecord::handle($excel)
+                ->setStartRow(8)
+                ->setStartColumn("K")
+                ->load(Users::find()->all(), Users::class);
+
             $excel->save(false, "test.xlsx");
-        } catch (Exception | \PhpOffice\PhpSpreadsheet\Exception $e) {
+        } catch (Exception | ExcelException $e) {
             var_dump($e->getMessage());
         }
         die();
