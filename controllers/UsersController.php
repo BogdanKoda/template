@@ -10,7 +10,6 @@ use app\components\excel\ExcelSaveActiveRecord;
 use app\components\Exceptions\ModelException;
 use app\components\Response;
 use app\components\services\UsersService;
-use app\models\Roles;
 use app\models\Users;
 use PHPExcel_Style_Border;
 use PHPExcel_Style_Fill;
@@ -98,7 +97,7 @@ class UsersController extends CrudController
                 ->setStartColumn("K")
                 ->load(Users::find()->all(), Users::class);
 
-            $excel->save(false, "test.xlsx");
+            $excel->save(true, "test.xlsx");
         } catch (Exception | ExcelException $e) {
             var_dump($e->getMessage());
         }
